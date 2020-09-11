@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{../style.css}">
+
+    <script src="https://kit.fontawesome.com/5f076fdad0.js" crossorigin="anonymous"></script>
+
+    <title>Sprinkles</title>
+</head>
+<body>
+    <nav class="site-nav navbar navbar-expand navbar-light fixed-top">
+        <div class="container-fluid">
+            <a th:href="@{/}" class="navbar-brand">Sprinkles</a>
+            <div class="navbar-collapse collapse text-center" id="nav-toggle">
+                <div class="navbar-nav ml-auto">
+                    <a href="https://github.com/Danieldosti51/discord-bot-application" class="nav-item nav-link">Source Code</a>
+                    <a href="https://discord.com/api/oauth2/authorize?client_id=555090330727350294&permissions=3148864&scope=bot" class="invite-button nav-item nav-link">Invite Me</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="tracks" class="container-fluid d-flex flex-column">
+        <h2>Currently Playing:</h2>
+        <a th:href="${currentTrack.uri}" draggable="false">
+            <section class="track">
+                <h3 class="track-title" th:text="${currentTrack.title}">Track Title</h3>
+                <div class="track-details d-flex flex-column flex-md-row justify-content-between">
+                    <span th:text="${currentTrack.author}">Track Author</span>
+                    <span th:text="${currentTrack.position+' / '+currentTrack.duration}">Track Length</span>
+                </div>
+            </section>
+        </a>
+        <article id="track-queue" th:if="${tracks.size() != 0}">
+            <h2>In Queue:</h2>
+            <a th:each="track: ${tracks}" th:href="${track.uri}" draggable="false">
+                <section class="track">
+                    <h3 class="track-title" th:text="${track.title}">Track Title</h3>
+                    <div class="track-details d-flex flex-column flex-md-row justify-content-between">
+                        <span th:text="${track.author}">Track Author</span>
+                        <span th:text="${track.duration}">Track Length</span>
+                    </div>
+                </section>
+            </a>
+        </article>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script th:src="@{../script.js}"></script>
+</body>
+</html>

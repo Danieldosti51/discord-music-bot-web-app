@@ -1,0 +1,161 @@
+/* ---------- Global Styles ---------- */
+
+body {
+    background: #B19CD9;
+    color: #101325;
+}
+
+h1 {
+    margin-bottom: 60px;
+}
+
+.text-giant {
+    font-size: 12rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+
+/* ---------- Navigation ---------- */
+
+.site-nav {
+    transition: background-color 0.25s;
+}
+
+.invite-button {
+    color: #FAFAFA !important;
+    background: #101325;
+    margin-left: 10px;
+    padding: 8px 12px;
+    transition: background-color 0.25s, padding 0.25s;
+}
+
+.invite-button:hover {
+    padding: 8px 15px !important;
+    background: #171c36;
+}
+
+.invite-button:focus {
+    padding: 8px 15px !important;
+    background: #1f2547;
+    outline: none;
+}
+
+.site-nav.inbody {
+    background: rgba(168, 144, 213, 0.9) !important;
+}
+
+
+/* ---------- Search Form ---------- */
+
+#search-container {
+    background: #FAFAFA;
+    width: 50%;
+    max-width: 1024px;
+    min-width: 250px;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#search-container input {
+    background: #FAFAFA;
+    border: none;
+    width: calc(100% - 35px);
+}
+
+#search-button {
+    width: 35px;
+    background: none;
+    border: none;
+    color: inherit;
+}
+
+#search-button i {
+    transition: font-size 0.14s;
+}
+
+#search-button:hover i {
+    font-size: 1.1em;
+}
+
+#search-button:focus i {
+    font-size: 0.95em;
+}
+
+#search-container:focus-within {
+    box-shadow: 0 0 0 2pt #101325;
+}
+
+input:focus {
+    outline: none;
+    border: none;
+}
+
+
+/*---------- Tracks ----------*/
+
+#tracks {
+    margin-top: 120px;
+    width: 65%;
+}
+
+#tracks h2 {
+    margin-left: 25px;
+}
+
+#track-queue {
+    margin-top: 25px;
+}
+
+#tracks a {
+    text-decoration: none;
+    color: inherit;
+    -webkit-user-select: text;
+    -moz-select: text;
+    -ms-select: text;
+    user-select: text;
+}
+
+#tracks a:focus {
+    outline: none;
+}
+
+.track-title {
+    margin-bottom: 20px;
+}
+
+.track {
+    margin: 20px 0;
+    padding: 25px;
+    width: 100%;
+    background: #b7a3dc;
+    border-radius: 8px;
+    transition: background-color 0.25s;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+}
+
+.track:hover {
+    background: #C5B5E3;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+    0px 3px 1px -2px rgba(0, 0, 0, 0.12);
+}
+
+#tracks a:focus .track {
+    background: #a890d5;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ---------- Responsive ---------- */
+
+@media (min-width: 576px) {
+    .track-details {
+        width: 100%;
+    }
+}
